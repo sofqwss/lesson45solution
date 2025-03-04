@@ -1,6 +1,2 @@
-#include <iostream>
-#include <string>
-using namespace std;
-
-void init(int* array, int size, int a, int b);
-string convert(int* array, int size);
+int* get_local_max_indices(int* array, int size, int* count);
+int* get_local_min_indices(int* array, int size, int* count);

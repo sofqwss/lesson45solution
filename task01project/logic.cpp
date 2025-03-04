@@ -1,21 +1,53 @@
-#include"logic.h"
+#include "logic.h"
 
-void init(int* array, int size, int a, int b) {
-	for (int i = 0; i < size; i++)
+int count_local_min(int* array, int size) {
+	int count = 0;
+
+	if (size > 1 && array[0] < array[1])
 	{
-		*(array + 1) = rand() % (b - a + 1);
-		array[i] = rand() % (b - a + 1) + a;
+		count++;
 	}
 
+	for (int i = 1; i < size - 1; i++)
+	{
+		if (array[i] < array[i - 1] && array[i] < array[i + 1]) {
+			count++;
+		}
+	}
 
+	if (size > 1 && array[size - 1] < array[size - 2]) {
+		count++;
+	}
+
+	return count;
 }
-string convert(int* array, int size) {
-	string s = "";
 
-	for (int  i = 0; i < size; i++)
+
+int* get_local_min_indices(int* array, int size, int* count) {
+
+	*count = count_local_min(array, size);
+	int* indices = new int[*count];
+	int j = 0;
+
+	if (size > 1 && array[0] < array[1])
 	{
-		s += to_string(*(array + i)) + " ";
+		indices[j] = 0;
+		j++;
 	}
 
-	return s;
+	for (int i = 1; i < size; i++)
+	{
+		if (array[i] < array[i - 1] && array[i] < array[i + 1])
+		{
+			indices[j] = i;
+			j++;
+		}
+	}
+
+	if (size > 1 && array[size - 1] < array[size - 2])
+	{
+		indices[j] = size - 1;
+	}
+
+	return indices;
 }

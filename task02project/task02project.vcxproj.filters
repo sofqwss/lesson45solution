@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="..\task01project\logic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="logic.cpp">
+    <ClCompile Include="..\task01project\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="util.cpp">
+    <ClCompile Include="..\task01project\util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="logic.h">
+    <ClInclude Include="..\task01project\logic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="util.h">
+    <ClInclude Include="..\task01project\util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
